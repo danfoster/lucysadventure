@@ -11,18 +11,23 @@ var WALK_ACCEL = 8000.0
 var WALK_DEACCEL = 8000.0
 var WALK_MAX_VELOCITY = 400.0
 var JUMP_VELOCITY = 460
-var JUMP_WATER_VELOCITY = 60
+var JUMP_WATER_VELOCITY = 230
+var MAX_JUMP = 1
+
 
 var airborne_time = 1e20
 var inwater = 0
+var jump_count = 0
 
 var red_texture = preload("res://assets/sprites/red.png")
 var green_texture = preload("res://assets/sprites/green.png")
+var blue_texture = preload("res://assets/sprites/blue.png")
 
 # 0 = green circle
 # 1 = red cube
 # 2 = blue triangle
 var currentshape=0
+var justchangedshape=false
 
 func setInWater(val):
 	inwater = val
@@ -46,9 +51,6 @@ func _input(event):
 			self.setshape(2)
 			
 func setshape(v):
-	
-	
-	
 	if (self.currentshape == v):
 		return
 	self.currentshape = v
@@ -57,18 +59,35 @@ func setshape(v):
 	
 	if (v == 1):
 		sprite.set_texture(red_texture)
-		var newshape = RectangleShape2D.new()
-		newshape.set_extents(Vector2(20,20))
+		#var newshape = RectangleShape2D.new()
+		#newshape.set_extents(Vector2(20,20))
+		var newshape = CircleShape2D.new()
+		newshape.set_radius(20)
 		self.clear_shapes()
 		self.add_shape(newshape)
+		JUMP_VELOCITY = 1
+		JUMP_WATER_VELOCITY = 1
+		MAX_JUMP = 0
 	elif (v == 0):
 		sprite.set_texture(green_texture)
 		var newshape = CircleShape2D.new()
 		newshape.set_radius(20)
 		self.clear_shapes()
 		self.add_shape(newshape)
+		JUMP_VELOCITY = 460
+		JUMP_WATER_VELOCITY = 230
+		MAX_JUMP = 1
+	elif (v == 2):
+		sprite.set_texture(blue_texture)
+		var newshape = CircleShape2D.new()
+		newshape.set_radius(20)
+		self.clear_shapes()
+		self.add_shape(newshape)
+		JUMP_VELOCITY = 460
+		JUMP_WATER_VELOCITY = 230
+		MAX_JUMP = 2
 	
-	
+	self.justchangedshape = true
 		
 	
 func _integrate_forces(s):
@@ -94,10 +113,14 @@ func _integrate_forces(s):
 	
 	if (found_floor):
 		airborne_time = 0.0
+		
 	else:
 		airborne_time += step # Time it spent in the air
 	
 	var on_floor = airborne_time < MAX_FLOOR_AIRBORNE_TIME
+	
+	if (found_floor and not jumping):
+		self.jump_count= 0
 	
 	# Process left/right movement
 	if (move_left and not move_right):
@@ -114,7 +137,8 @@ func _integrate_forces(s):
 		lv.x = sign(lv.x)*xv
 		
 	# Process jumping
-	if (not jumping and jump and on_floor):
+	if (not jumping and jump and self.jump_count < MAX_JUMP):
+		jump_count += 1
 		lv.y = -JUMP_VELOCITY
 		jumping = true
 	if (jumping):
@@ -122,16 +146,27 @@ func _integrate_forces(s):
 			# Set off the jumping flag if going down
 			jumping = false
 	
-	# In in water, we want to float, else apply gravity.
-	if (inwater != 0):
-		if (jump):
-			lv.y= -JUMP_WATER_VELOCITY
-		else:
-			lv.y=(1-inwater)*98
-		inwater = 0
-	else:
-		lv += s.get_total_gravity()*step
+
 	
+	# In in water, we want to float, else apply gravity.
+	if (self.currentshape == 1):
+		if (inwater != 0):
+			lv += s.get_total_gravity()*step / 2
+		else:
+			lv += s.get_total_gravity()*step
+	else:
+		if (inwater != 0):
+			if (jump):
+				lv.y= -JUMP_WATER_VELOCITY
+			else:
+				lv.y=(1-inwater)*98
+			inwater = 0
+		else:
+			lv += s.get_total_gravity()*step
+	
+	if (self.justchangedshape):
+		lv.y= -48
+		self.justchangedshape = false
 	
 	s.set_linear_velocity(lv)
 
