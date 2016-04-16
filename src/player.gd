@@ -11,8 +11,14 @@ var WALK_ACCEL = 8000.0
 var WALK_DEACCEL = 8000.0
 var WALK_MAX_VELOCITY = 400.0
 var JUMP_VELOCITY = 460
+var JUMP_WATER_VELOCITY = 60
 
 var airborne_time = 1e20
+var inwater = 0
+
+func setInWater(val):
+	inwater = val
+	
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -74,7 +80,16 @@ func _integrate_forces(s):
 			# Set off the jumping flag if going down
 			jumping = false
 	
-	# Finally, apply gravity
-	lv += s.get_total_gravity()*step
+	# In in water, we want to float, else apply gravity.
+	if (inwater != 0):
+		if (jump):
+			lv.y= -JUMP_WATER_VELOCITY
+		else:
+			lv.y=(1-inwater)*98
+		inwater = 0
+	else:
+		lv += s.get_total_gravity()*step
+	
+	
 	s.set_linear_velocity(lv)
 
