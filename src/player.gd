@@ -29,14 +29,17 @@ var blue_texture = preload("res://assets/sprites/blue.png")
 var currentshape=0
 var justchangedshape=false
 
+var spawn_pos = null
+
 func setInWater(val):
 	inwater = val
-	
+
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	set_process_input(true)
+	spawn_pos = self.get_transform()
 
 func _process(delta):
 	pass
@@ -154,6 +157,13 @@ func _integrate_forces(s):
 			lv += s.get_total_gravity()*step / 2
 		else:
 			lv += s.get_total_gravity()*step
+	elif (self.currentshape == 2):
+		#We die if we hit waters as triangle
+		if (inwater != 0):
+			s.set_transform(self.spawn_pos)
+			self.setshape(0)
+			return
+		lv += s.get_total_gravity()*step
 	else:
 		if (inwater != 0):
 			if (jump):
