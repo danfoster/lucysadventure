@@ -4,14 +4,13 @@ extends RigidBody2D
 # member variables here, example:
 # var a=2
 # var b="textvar"
-var movex=0
-var movey=0
-var mag=50
+var jumping = false
 
 var MAX_FLOOR_AIRBORNE_TIME = 0.15
-var WALK_ACCEL = 800.0
-var WALK_DEACCEL = 800.0
-var WALK_MAX_VELOCITY = 200.0
+var WALK_ACCEL = 8000.0
+var WALK_DEACCEL = 8000.0
+var WALK_MAX_VELOCITY = 400.0
+var JUMP_VELOCITY = 460
 
 var airborne_time = 1e20
 
@@ -32,6 +31,7 @@ func _integrate_forces(s):
 	# Get the controls
 	var move_left = Input.is_action_pressed("MOVE_LEFT")
 	var move_right = Input.is_action_pressed("MOVE_RIGHT")
+	var jump = Input.is_action_pressed("JUMP")
 	
 	# Find the floor (a contact with upwards facing collision normal)
 	var found_floor = false
@@ -51,27 +51,30 @@ func _integrate_forces(s):
 	
 	var on_floor = airborne_time < MAX_FLOOR_AIRBORNE_TIME
 	
-	
-
-	
-	if (on_floor):
-		# Process logic when character is on floor
-		if (move_left and not move_right):
-			if (lv.x > -WALK_MAX_VELOCITY):
-				lv.x -= WALK_ACCEL*step
-		elif (move_right and not move_left):
-			if (lv.x < WALK_MAX_VELOCITY):
-				lv.x += WALK_ACCEL*step
-		else:
-			var xv = abs(lv.x)
-			xv -= WALK_DEACCEL*step
-			if (xv < 0):
-				xv = 0
-			lv.x = sign(lv.x)*xv
+	# Process left/right movement
+	if (move_left and not move_right):
+		if (lv.x > -WALK_MAX_VELOCITY):
+			lv.x -= WALK_ACCEL*step
+	elif (move_right and not move_left):
+		if (lv.x < WALK_MAX_VELOCITY):
+			lv.x += WALK_ACCEL*step
+	else:
+		var xv = abs(lv.x)
+		xv -= WALK_DEACCEL*step
+		if (xv < 0):
+			xv = 0
+		lv.x = sign(lv.x)*xv
 		
-
+	# Process jumping
+	if (not jumping and jump and on_floor):
+		lv.y = -JUMP_VELOCITY
+		jumping = true
+	if (jumping):
+		if (lv.y > 0):
+			# Set off the jumping flag if going down
+			jumping = false
 	
-	# Finally, apply gravity and set back the linear velocity
+	# Finally, apply gravity
 	lv += s.get_total_gravity()*step
 	s.set_linear_velocity(lv)
 
