@@ -16,6 +16,14 @@ var JUMP_WATER_VELOCITY = 60
 var airborne_time = 1e20
 var inwater = 0
 
+var red_texture = preload("res://assets/sprites/red.png")
+var green_texture = preload("res://assets/sprites/green.png")
+
+# 0 = green circle
+# 1 = red cube
+# 2 = blue triangle
+var currentshape=0
+
 func setInWater(val):
 	inwater = val
 	
@@ -23,11 +31,45 @@ func setInWater(val):
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	set_process_input(true)
 
 func _process(delta):
-	#self.move(Vector2(movex*mag*delta,movey*mag*delta))
 	pass
+	
+func _input(event):
+	if(event.type == InputEvent.KEY):
+		if(Input.is_action_pressed("RED")):
+			self.setshape(1)
+		elif(Input.is_action_pressed("GREEN")):
+			self.setshape(0)
+		elif(Input.is_action_pressed("BLUE")):
+			self.setshape(2)
+			
+func setshape(v):
+	
+	
+	
+	if (self.currentshape == v):
+		return
+	self.currentshape = v
+	var sprite = get_node("playerSprite")
+	var shape = get_node("CollisionShape2D")
+	
+	if (v == 1):
+		sprite.set_texture(red_texture)
+		var newshape = RectangleShape2D.new()
+		newshape.set_extents(Vector2(20,20))
+		self.clear_shapes()
+		self.add_shape(newshape)
+	elif (v == 0):
+		sprite.set_texture(green_texture)
+		var newshape = CircleShape2D.new()
+		newshape.set_radius(20)
+		self.clear_shapes()
+		self.add_shape(newshape)
+	
+	
+		
 	
 func _integrate_forces(s):
 	var lv = s.get_linear_velocity()
