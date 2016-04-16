@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="TileSet" subresource_count="7" version="2.0" version_name="Godot Engine v2.0.stable.official">
+	<ext_resource path="res://assets/tiles/tiles.png" type="Texture" index="0"></ext_resource>
+	<resource type="RectangleShape2D" path="local://2">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://1">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://3">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://4">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://5">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
+	<main_resource>
+		<string name="0/name"> "blank" </string>
+		<resource name="0/texture" external="0">  </resource>
+		<vector2 name="0/tex_offset"> 0, 0 </vector2>
+		<resource name="0/material"></resource>		<rect2 name="0/region"> 0, 0, 50, 50 </rect2>
+		<vector2 name="0/occluder_offset"> 25, 25 </vector2>
+		<resource name="0/occluder"></resource>		<vector2 name="0/navigation_offset"> 25, 25 </vector2>
+		<resource name="0/navigation"></resource>		<vector2 name="0/shape_offset"> 25, 25 </vector2>
+		<array name="0/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://2">  </resource>
+		</array>
+		<string name="1/name"> "edge" </string>
+		<resource name="1/texture" external="0">  </resource>
+		<vector2 name="1/tex_offset"> 0, 0 </vector2>
+		<resource name="1/material"></resource>		<rect2 name="1/region"> 50, 0, 50, 50 </rect2>
+		<vector2 name="1/occluder_offset"> 25, 25 </vector2>
+		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> 25, 25 </vector2>
+		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 25, 25 </vector2>
+		<array name="1/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://1">  </resource>
+		</array>
+		<string name="2/name"> "u" </string>
+		<resource name="2/texture" external="0">  </resource>
+		<vector2 name="2/tex_offset"> 0, 0 </vector2>
+		<resource name="2/material"></resource>		<rect2 name="2/region"> 100, 0, 50, 50 </rect2>
+		<vector2 name="2/occluder_offset"> 25, 25 </vector2>
+		<resource name="2/occluder"></resource>		<vector2 name="2/navigation_offset"> 25, 25 </vector2>
+		<resource name="2/navigation"></resource>		<vector2 name="2/shape_offset"> 25, 25 </vector2>
+		<array name="2/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://3">  </resource>
+		</array>
+		<string name="3/name"> "outercorner" </string>
+		<resource name="3/texture" external="0">  </resource>
+		<vector2 name="3/tex_offset"> 0, 0 </vector2>
+		<resource name="3/material"></resource>		<rect2 name="3/region"> 150, 0, 50, 50 </rect2>
+		<vector2 name="3/occluder_offset"> 25, 25 </vector2>
+		<resource name="3/occluder"></resource>		<vector2 name="3/navigation_offset"> 25, 25 </vector2>
+		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 25, 25 </vector2>
+		<array name="3/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://4">  </resource>
+		</array>
+		<string name="4/name"> "innnercorner" </string>
+		<resource name="4/texture" external="0">  </resource>
+		<vector2 name="4/tex_offset"> 0, 0 </vector2>
+		<resource name="4/material"></resource>		<rect2 name="4/region"> 200, 0, 50, 50 </rect2>
+		<vector2 name="4/occluder_offset"> 25, 25 </vector2>
+		<resource name="4/occluder"></resource>		<vector2 name="4/navigation_offset"> 25, 25 </vector2>
+		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 25, 25 </vector2>
+		<array name="4/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+
+	</main_resource>
+</resource_file>

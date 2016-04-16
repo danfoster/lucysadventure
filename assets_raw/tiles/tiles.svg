@@ -15,7 +15,10 @@
    id="svg4292"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="tiles.svg">
+   sodipodi:docname="tiles.svg"
+   inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4294">
     <inkscape:perspective
@@ -33,9 +36,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.7327657"
-     inkscape:cx="434.82689"
-     inkscape:cy="432.57707"
+     inkscape:zoom="2.0723991"
+     inkscape:cx="189.48901"
+     inkscape:cy="20.576836"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -54,11 +57,11 @@
     <inkscape:grid
        type="xygrid"
        id="grid4860"
-       dotted="false"
+       dotted="true"
        enabled="true"
        snapvisiblegridlinesonly="false"
-       spacingx="1"
-       spacingy="1"
+       spacingx="10"
+       spacingy="10"
        empspacing="5" />
   </sodipodi:namedview>
   <metadata
@@ -80,94 +83,148 @@
      transform="translate(0,-308.26772)">
     <rect
        style="fill:#2a2a56;fill-opacity:1;stroke:none"
-       id="rect4866"
-       width="100"
-       height="100"
-       x="310"
-       y="567.36218" />
-    <rect
-       y="567.36218"
-       x="310"
-       height="5.0000181"
-       width="99.999992"
-       id="rect4872"
-       style="fill:#7575bc;fill-opacity:1;stroke:none" />
-    <rect
-       style="fill:#7575bc;fill-opacity:1;stroke:none"
-       id="rect4874"
-       width="4.9999948"
-       height="100.00002"
-       x="310"
-       y="567.36218" />
-    <rect
-       y="567.36218"
-       x="405"
-       height="99.999985"
-       width="5.0000067"
-       id="rect4876"
-       style="fill:#7575bc;fill-opacity:1;stroke:none" />
-    <rect
-       y="567.36218"
-       x="200"
-       height="100"
-       width="100"
-       id="rect4880"
-       style="fill:#2a2a56;fill-opacity:1;stroke:none" />
-    <rect
-       style="fill:#7575bc;fill-opacity:1;stroke:none"
-       id="rect4882"
-       width="99.999992"
-       height="5.0000181"
-       x="200"
-       y="567.36218" />
+       id="rect4888"
+       width="50"
+       height="49.999973"
+       x="0"
+       y="902.36218"
+       ry="0"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3522"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(0,-100.00001)">
+      <g
+         id="g3512">
+        <rect
+           y="1002.3622"
+           x="150"
+           height="49.999989"
+           width="50"
+           id="rect4892"
+           style="fill:#2a2a56;fill-opacity:1;stroke:none"
+           inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <rect
+           style="fill:#7575bc;fill-opacity:1;stroke:none"
+           id="rect4894"
+           width="49.999996"
+           height="2.5000086"
+           x="150"
+           y="1002.3622"
+           inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+      </g>
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+         style="fill:#7575bc;fill-opacity:1;stroke:none"
+         id="rect4896"
+         width="2.4999974"
+         height="50"
+         x="150"
+         y="1002.3622" />
+    </g>
+    <g
+       id="g3490"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(0,-100.00001)">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+         y="1002.3622"
+         x="50"
+         height="49.999989"
+         width="50"
+         id="rect3438"
+         style="fill:#2a2a56;fill-opacity:1;stroke:none" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+         style="fill:#7575bc;fill-opacity:1;stroke:none"
+         id="rect3440"
+         width="49.999996"
+         height="2.5000086"
+         x="50"
+         y="1002.3622" />
+    </g>
     <rect
        style="fill:#2a2a56;fill-opacity:1;stroke:none"
-       id="rect4888"
-       width="100"
-       height="100"
-       x="90"
-       y="567.36218" />
+       id="rect3444"
+       width="50"
+       height="49.999989"
+       x="100"
+       y="902.36218"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
-       y="567.36218"
-       x="420"
-       height="100"
-       width="100"
-       id="rect4892"
-       style="fill:#2a2a56;fill-opacity:1;stroke:none" />
+       y="902.36218"
+       x="100"
+       height="2.5000086"
+       width="49.999996"
+       id="rect3446"
+       style="fill:#7575bc;fill-opacity:1;stroke:none"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#7575bc;fill-opacity:1;stroke:none"
-       id="rect4894"
-       width="99.999992"
-       height="5.0000181"
-       x="420"
-       y="567.36218" />
+       id="rect3448"
+       width="2.4999974"
+       height="50"
+       x="100"
+       y="902.36218"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
-       y="567.36218"
-       x="420"
-       height="100.00002"
-       width="4.9999948"
-       id="rect4896"
-       style="fill:#7575bc;fill-opacity:1;stroke:none" />
-    <rect
-       y="567.36218"
-       x="530"
-       height="100"
-       width="100"
-       id="rect4900"
-       style="fill:#2a2a56;fill-opacity:1;stroke:none" />
-    <rect
+       y="902.36212"
+       x="147.5"
+       height="50"
+       width="2.4999974"
+       id="rect3450"
        style="fill:#7575bc;fill-opacity:1;stroke:none"
-       id="rect4902"
-       width="99.999992"
-       height="5.0000181"
-       x="530"
-       y="567.36218" />
-    <rect
-       style="fill:#7575bc;fill-opacity:1;stroke:none"
-       id="rect4906"
-       width="5.0000067"
-       height="99.999985"
-       x="625"
-       y="567.36218" />
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3470"
+       transform="matrix(0,1,-1,0,1252.3622,652.36217)"
+       inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+         style="fill:#2a2a56;fill-opacity:1;stroke:none"
+         id="rect3472"
+         width="50"
+         height="49.999989"
+         x="250"
+         y="1002.3622" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/df3804/Documents/projects/ld35/assets/tiles/tiles.png"
+         y="1002.3622"
+         x="250"
+         height="2.5000086"
+         width="2.5"
+         id="rect3474"
+         style="fill:#7575bc;fill-opacity:1;stroke:none" />
+    </g>
   </g>
 </svg>
