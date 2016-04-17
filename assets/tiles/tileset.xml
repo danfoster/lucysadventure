@@ -11,17 +11,17 @@
 		<vector2 name="extents"> 25, 25 </vector2>
 
 	</resource>
+	<resource type="RectangleShape2D" path="local://5">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 25, 25 </vector2>
+
+	</resource>
 	<resource type="RectangleShape2D" path="local://3">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 25, 25 </vector2>
 
 	</resource>
 	<resource type="RectangleShape2D" path="local://4">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 25, 25 </vector2>
-
-	</resource>
-	<resource type="RectangleShape2D" path="local://5">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 25, 25 </vector2>
 
@@ -125,6 +125,16 @@
 		<resource name="9/occluder"></resource>		<vector2 name="9/navigation_offset"> 25, 25 </vector2>
 		<resource name="9/navigation"></resource>		<vector2 name="9/shape_offset"> 25, 25 </vector2>
 		<array name="9/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+		<string name="10/name"> "island" </string>
+		<resource name="10/texture" external="0">  </resource>
+		<vector2 name="10/tex_offset"> 0, 0 </vector2>
+		<resource name="10/material"></resource>		<rect2 name="10/region"> 500, 0, 50, 50 </rect2>
+		<vector2 name="10/occluder_offset"> 25, 25 </vector2>
+		<resource name="10/occluder"></resource>		<vector2 name="10/navigation_offset"> 25, 25 </vector2>
+		<resource name="10/navigation"></resource>		<vector2 name="10/shape_offset"> 25, 25 </vector2>
+		<array name="10/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://5">  </resource>
 		</array>
 
