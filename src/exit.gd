@@ -16,5 +16,5 @@ func _ready():
 func _process(delta):
 	var boxplayer = playershape.get_shape()
 	if(boxplayer.collide(playersprite.get_transform(),boxself,self.get_transform())):
-		get_node("/root/global").setScene("res://scenes/title.scn")
+		get_node("/root/global").completeLevel()
 		

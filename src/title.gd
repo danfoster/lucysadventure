@@ -1,4 +1,3 @@
-
 extends Node
 
 # member variables here, example:
@@ -9,11 +8,12 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
+	
+	
+func _on_Button_pressed(l,next):
+	var global = get_node("/root/global")
+	global.setNextLevel(next)
+	global.setScene("res://scenes/level"+l+".scn")
 
-
-
-
-func _on_Button_pressed(l):
-	get_node("/root/global").setScene("res://scenes/level"+l+".scn")
 
 
