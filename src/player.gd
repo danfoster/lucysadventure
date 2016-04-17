@@ -150,7 +150,6 @@ func _integrate_forces(s):
 		lv.x = sign(lv.x)*xv
 		
 	# Process jumping
-	print(self.jump_count," ",airborne_time)
 	if ( can_jump and jump and self.jump_count < MAX_JUMP):
 		jump_count += 1
 		lv.y = -JUMP_VELOCITY

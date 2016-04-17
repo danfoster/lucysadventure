@@ -14,10 +14,10 @@ func _ready():
 	# Initialization here
 	boxself = RectangleShape2D.new()
 	boxself.set_extents(Vector2(self.get_texture().get_size().width/2,self.get_texture().get_size().height/2))
-	playershape = get_node("/root/Node/player/CollisionShape2D")
-	playersprite = get_node("/root/Node/player")
+	playershape = get_node("../../player/CollisionShape2D")
+	playersprite = get_node("../../player")
 	
-	var playerheight = get_node("/root/Node/player/playerSprite").get_texture().get_size().height+20
+	var playerheight = get_node("../../player/playerSprite").get_texture().get_size().height+20
 	waterlevel = self.get_transform().get_origin().y - (self.get_transform().get_scale().y * self.get_texture().get_height())/2 - playerheight
 	set_process(true)
 	

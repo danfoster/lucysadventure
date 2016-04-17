@@ -13,8 +13,8 @@ var boxself = null
 func _ready():
 	boxself = RectangleShape2D.new()
 	boxself.set_extents(Vector2(self.get_texture().get_size().width/2,self.get_texture().get_size().height/2))
-	playershape = get_node("/root/Node/player/CollisionShape2D")
-	playersprite = get_node("/root/Node/player")
+	playershape = get_node("../../player/CollisionShape2D")
+	playersprite = get_node("../../player")
 	
 	set_process(true)
 	
