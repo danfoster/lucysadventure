@@ -32,6 +32,8 @@ var justchangedshape=false
 
 var spawn_pos = null
 var reset = 0
+var floor_h_velocity = 0.0
+
 
 func setInWater(val):
 	inwater = val
@@ -62,30 +64,16 @@ func setshape(v):
 	
 	if (v == 1):
 		sprite.set_texture(red_texture)
-		#var newshape = RectangleShape2D.new()
-		#newshape.set_extents(Vector2(20,20))
-		var newshape = CircleShape2D.new()
-		newshape.set_radius(20)
-		self.clear_shapes()
-		self.add_shape(newshape)
 		JUMP_VELOCITY = 1
 		JUMP_WATER_VELOCITY = 1
 		MAX_JUMP = 0
 	elif (v == 0):
 		sprite.set_texture(green_texture)
-		var newshape = CircleShape2D.new()
-		newshape.set_radius(20)
-		self.clear_shapes()
-		self.add_shape(newshape)
 		JUMP_VELOCITY = 460
 		JUMP_WATER_VELOCITY = 230
 		MAX_JUMP = 1
 	elif (v == 2):
 		sprite.set_texture(blue_texture)
-		var newshape = CircleShape2D.new()
-		newshape.set_radius(20)
-		self.clear_shapes()
-		self.add_shape(newshape)
 		JUMP_VELOCITY = 460
 		JUMP_WATER_VELOCITY = 230
 		MAX_JUMP = 2
@@ -104,10 +92,13 @@ func _integrate_forces(s):
 		if (self.reset > 1.1):
 			self.reset = 0
 			self.setshape(0)
-			
-		
 		return
 		
+	# Deapply prev floor velocity
+	lv.x -= floor_h_velocity
+	floor_h_velocity = 0.0
+	
+			
 	
 	# Get the controls
 	var move_left = Input.is_action_pressed("MOVE_LEFT")
@@ -194,6 +185,12 @@ func _integrate_forces(s):
 		if (on_floor):
 			lv.y= -10
 		self.justchangedshape = false
+	
+	# Apply floor velocity
+	if (found_floor):
+		floor_h_velocity = s.get_contact_collider_velocity_at_pos(floor_index).x
+		lv.x += floor_h_velocity
+	
 	
 	s.set_linear_velocity(lv)
 
