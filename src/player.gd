@@ -18,6 +18,7 @@ var MAX_JUMP = 1
 var airborne_time = 1e20
 var inwater = 0
 var jump_count = 0
+var can_jump = true
 
 var red_texture = preload("res://assets/sprites/red.png")
 var green_texture = preload("res://assets/sprites/green.png")
@@ -30,7 +31,7 @@ var currentshape=0
 var justchangedshape=false
 
 var spawn_pos = null
-var reset = false
+var reset = 0
 
 func setInWater(val):
 	inwater = val
@@ -48,10 +49,10 @@ func _process(delta):
 func _input(event):
 	if(event.type == InputEvent.KEY):
 		if(Input.is_action_pressed("RESET")):
-			self.reset = true
+			self.reset = 1
 			
 func setshape(v):
-	if (self.currentshape == v):
+	if (self.currentshape == v or self.reset != 0):
 		return
 	self.currentshape = v
 	var sprite = get_node("playerSprite")
@@ -94,16 +95,23 @@ func _integrate_forces(s):
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
-	if (self.reset):
-		s.set_transform(self.spawn_pos)
-		self.setshape(0)
-		self.reset=false
+	if (self.reset > 0):
+		if (self.reset == 1):
+			s.set_transform(self.spawn_pos)
+		self.reset += step
+		if (self.reset > 1.1):
+			self.reset = 0
+			self.setshape(0)
+			
+		
 		return
+		
 	
 	# Get the controls
 	var move_left = Input.is_action_pressed("MOVE_LEFT")
 	var move_right = Input.is_action_pressed("MOVE_RIGHT")
 	var jump = Input.is_action_pressed("JUMP")
+	
 	
 	# Find the floor (a contact with upwards facing collision normal)
 	var found_floor = false
@@ -142,10 +150,15 @@ func _integrate_forces(s):
 		lv.x = sign(lv.x)*xv
 		
 	# Process jumping
-	if (not jumping and jump and self.jump_count < MAX_JUMP):
+	print(self.jump_count," ",airborne_time)
+	if ( can_jump and jump and self.jump_count < MAX_JUMP):
 		jump_count += 1
 		lv.y = -JUMP_VELOCITY
 		jumping = true
+		can_jump = false
+	if ( not can_jump and not jump):
+		can_jump = true
+	
 	if (jumping):
 		if (lv.y > 0):
 			# Set off the jumping flag if going down
@@ -177,7 +190,8 @@ func _integrate_forces(s):
 			lv += s.get_total_gravity()*step
 	
 	if (self.justchangedshape):
-		lv.y= -48
+		if (on_floor):
+			lv.y= -10
 		self.justchangedshape = false
 	
 	s.set_linear_velocity(lv)
