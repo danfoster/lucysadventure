@@ -162,6 +162,7 @@ func _integrate_forces(s):
 	if (self.currentshape == 1):
 		if (inwater != 0):
 			lv += s.get_total_gravity()*step / 2
+			inwater = 0
 		else:
 			lv += s.get_total_gravity()*step
 	elif (self.currentshape == 2):
