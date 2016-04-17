@@ -30,6 +30,7 @@ var currentshape=0
 var justchangedshape=false
 
 var spawn_pos = null
+var reset = false
 
 func setInWater(val):
 	inwater = val
@@ -46,12 +47,8 @@ func _process(delta):
 	
 func _input(event):
 	if(event.type == InputEvent.KEY):
-		if(Input.is_action_pressed("RED")):
-			self.setshape(1)
-		elif(Input.is_action_pressed("GREEN")):
-			self.setshape(0)
-		elif(Input.is_action_pressed("BLUE")):
-			self.setshape(2)
+		if(Input.is_action_pressed("RESET")):
+			self.reset = true
 			
 func setshape(v):
 	if (self.currentshape == v):
@@ -97,6 +94,11 @@ func _integrate_forces(s):
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
 	
+	if (self.reset):
+		s.set_transform(self.spawn_pos)
+		self.setshape(0)
+		self.reset=false
+		return
 	
 	# Get the controls
 	var move_left = Input.is_action_pressed("MOVE_LEFT")
