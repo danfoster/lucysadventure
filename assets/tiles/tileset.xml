@@ -77,6 +77,56 @@
 		<array name="4/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://5">  </resource>
 		</array>
+		<string name="5/name"> "edge-corner-right" </string>
+		<resource name="5/texture" external="0">  </resource>
+		<vector2 name="5/tex_offset"> 0, 0 </vector2>
+		<resource name="5/material"></resource>		<rect2 name="5/region"> 250, 0, 50, 50 </rect2>
+		<vector2 name="5/occluder_offset"> 25, 25 </vector2>
+		<resource name="5/occluder"></resource>		<vector2 name="5/navigation_offset"> 25, 25 </vector2>
+		<resource name="5/navigation"></resource>		<vector2 name="5/shape_offset"> 25, 25 </vector2>
+		<array name="5/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+		<string name="6/name"> "edge-corner-left" </string>
+		<resource name="6/texture" external="0">  </resource>
+		<vector2 name="6/tex_offset"> 0, 0 </vector2>
+		<resource name="6/material"></resource>		<rect2 name="6/region"> 300, 0, 50, 50 </rect2>
+		<vector2 name="6/occluder_offset"> 25, 25 </vector2>
+		<resource name="6/occluder"></resource>		<vector2 name="6/navigation_offset"> 25, 25 </vector2>
+		<resource name="6/navigation"></resource>		<vector2 name="6/shape_offset"> 25, 25 </vector2>
+		<array name="6/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+		<string name="7/name"> "edge-corner-both" </string>
+		<resource name="7/texture" external="0">  </resource>
+		<vector2 name="7/tex_offset"> 0, 0 </vector2>
+		<resource name="7/material"></resource>		<rect2 name="7/region"> 350, 0, 50, 50 </rect2>
+		<vector2 name="7/occluder_offset"> 25, 25 </vector2>
+		<resource name="7/occluder"></resource>		<vector2 name="7/navigation_offset"> 25, 25 </vector2>
+		<resource name="7/navigation"></resource>		<vector2 name="7/shape_offset"> 25, 25 </vector2>
+		<array name="7/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+		<string name="8/name"> "inner-corner-both" </string>
+		<resource name="8/texture" external="0">  </resource>
+		<vector2 name="8/tex_offset"> 0, 0 </vector2>
+		<resource name="8/material"></resource>		<rect2 name="8/region"> 400, 0, 50, 50 </rect2>
+		<vector2 name="8/occluder_offset"> 25, 25 </vector2>
+		<resource name="8/occluder"></resource>		<vector2 name="8/navigation_offset"> 25, 25 </vector2>
+		<resource name="8/navigation"></resource>		<vector2 name="8/shape_offset"> 25, 25 </vector2>
+		<array name="8/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
+		<string name="9/name"> "inner-corner-diag" </string>
+		<resource name="9/texture" external="0">  </resource>
+		<vector2 name="9/tex_offset"> 0, 0 </vector2>
+		<resource name="9/material"></resource>		<rect2 name="9/region"> 450, 0, 50, 50 </rect2>
+		<vector2 name="9/occluder_offset"> 25, 25 </vector2>
+		<resource name="9/occluder"></resource>		<vector2 name="9/navigation_offset"> 25, 25 </vector2>
+		<resource name="9/navigation"></resource>		<vector2 name="9/shape_offset"> 25, 25 </vector2>
+		<array name="9/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
+		</array>
 
 	</main_resource>
 </resource_file>
