@@ -50,6 +50,8 @@ func _input(event):
 	if(event.type == InputEvent.KEY):
 		if(Input.is_action_pressed("RESET")):
 			self.reset = 1
+		elif(Input.is_action_pressed("MENU")):
+			get_node("/root/global").setScene("res://scenes/title.scn")
 			
 func setshape(v):
 	if (self.currentshape == v or self.reset != 0):

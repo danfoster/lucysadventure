@@ -13,7 +13,7 @@ func _ready():
 
 
 
-func _on_MenuButton_pressed(l):
+func _on_Button_pressed(l):
 	get_node("/root/global").setScene("res://scenes/level"+l+".scn")
 
 
